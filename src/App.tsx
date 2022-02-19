@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import findIndex from "lodash-es/findIndex";
 import { api } from "./api";
-import { a } from "./utils";
+import { b } from "./utils";
 
-a();
+b(122221);
 
-export default function App() {
+function App() {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -17,7 +17,9 @@ export default function App() {
     <div>
       (⋈•̀ ᴗ•́⋈)
       <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click me</button>
+      <button onClick={() => setCount(count + 1)}>클릭!</button>
     </div>
   );
 }
+
+export default App;

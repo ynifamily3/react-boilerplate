@@ -1,29 +1,41 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { ESBuildMinifyPlugin } = require("esbuild-loader");
 const { ProvidePlugin } = require("webpack");
+const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
+const ReactRefreshTypeScript = require("react-refresh-typescript");
+
+const isDevelopment = process.env.NODE_ENV !== "production";
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-  // mode: process.env.NODE_ENV,
-  mode: "development",
+  mode: process.env.NODE_ENV,
   entry: {
     index: "./src/index.tsx",
   },
-  devtool: process.env.NODE_ENV === "production" ? false : "source-map",
+  devtool: isDevelopment ? "source-map" : false,
   devServer: {
     compress: true,
     port: 3000,
+    hot: true,
   },
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: "esbuild-loader",
-        options: {
-          loader: "tsx",
-          target: "es2020",
-        },
+        exclude: /.yarn/,
+        use: [
+          {
+            loader: require.resolve("ts-loader"),
+            options: {
+              getCustomTransformers: () => ({
+                before: [isDevelopment && ReactRefreshTypeScript()].filter(
+                  Boolean
+                ),
+              }),
+              transpileOnly: isDevelopment, // ForkTsCheckerWebpackPlugin  필요
+            },
+          },
+        ],
       },
     ],
   },
@@ -42,19 +54,13 @@ module.exports = {
     new ProvidePlugin({
       React: "react",
     }),
-  ],
+    isDevelopment && new ReactRefreshWebpackPlugin(),
+  ].filter(Boolean),
   optimization: {
     splitChunks: {
       chunks: "all",
     },
     usedExports: true,
-    // minimizer:
-    //   process.env.NODE_ENV === "production"
-    //     ? [
-    //         new ESBuildMinifyPlugin({
-    //           target: "es2020",
-    //         }),
-    //       ]
-    //     : [],
   },
+  target: ["web", "es5"],
 };

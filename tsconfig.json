@@ -1,10 +1,12 @@
 {
   "compilerOptions": {
     "jsx": "react-jsx",
-    "target": "ESNext",
+    "target": "ES5",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "module": "ES6"
+    "module": "ES6",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "sourceMap": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]

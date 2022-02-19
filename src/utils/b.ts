@@ -1,3 +1,4 @@
 export function b(input: number) {
-  return input + 10;
+  console.log("B called");
+  return input + 17742;
 }
