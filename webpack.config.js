@@ -1,6 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { ProvidePlugin } = require("webpack");
+const { ProvidePlugin, HotModuleReplacementPlugin } = require("webpack");
 const ReactRefreshWebpackPlugin = require("@pmmmwh/react-refresh-webpack-plugin");
 const ReactRefreshTypeScript = require("react-refresh-typescript");
 
@@ -16,7 +16,6 @@ module.exports = {
   devServer: {
     compress: true,
     port: 3000,
-    hot: true,
   },
   module: {
     rules: [
@@ -54,6 +53,7 @@ module.exports = {
     new ProvidePlugin({
       React: "react",
     }),
+    isDevelopment && new HotModuleReplacementPlugin(),
     isDevelopment && new ReactRefreshWebpackPlugin(),
   ].filter(Boolean),
   optimization: {

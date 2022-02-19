@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
+    "@types/core-js": "^2.5.5",
     "@types/lodash-es": "^4.17.6",
     "@types/node": "^17.0.18",
     "@types/react": "^17.0.39",
@@ -28,6 +29,7 @@
     "webpack-dev-server": "^4.7.4"
   },
   "dependencies": {
+    "core-js": "^3.21.1",
     "lodash-es": "^4.17.21",
     "promise-polyfill": "^8.2.1",
     "react": "^17.0.2",

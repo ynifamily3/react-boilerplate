@@ -36,10 +36,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@pmmmwh/react-refresh-webpack-plugin", "virtual:86db00c5f3a706f1820970e628526dec152db48a5baa907699f1f545d9713985f99563ef59c7b43449eac173fe3595397520198b610f948d19a82508148c116a#npm:0.5.4"],
+            ["@types/core-js", "npm:2.5.5"],
             ["@types/lodash-es", "npm:4.17.6"],
             ["@types/node", "npm:17.0.18"],
             ["@types/react", "npm:17.0.39"],
             ["@types/react-dom", "npm:17.0.11"],
+            ["core-js", "npm:3.21.1"],
             ["cross-env", "npm:7.0.3"],
             ["express", "npm:4.17.3"],
             ["html-webpack-plugin", "virtual:86db00c5f3a706f1820970e628526dec152db48a5baa907699f1f545d9713985f99563ef59c7b43449eac173fe3595397520198b610f948d19a82508148c116a#npm:5.5.0"],
@@ -233,6 +235,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/connect-history-api-fallback", "npm:1.3.5"],
             ["@types/express-serve-static-core", "npm:4.17.28"],
             ["@types/node", "npm:17.0.18"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/core-js", [
+        ["npm:2.5.5", {
+          "packageLocation": "./.yarn/cache/@types-core-js-npm-2.5.5-cc01096305-54eb91dc52.zip/node_modules/@types/core-js/",
+          "packageDependencies": [
+            ["@types/core-js", "npm:2.5.5"]
           ],
           "linkType": "HARD",
         }]
@@ -1584,6 +1595,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD",
         }]
       ]],
+      ["core-js", [
+        ["npm:3.21.1", {
+          "packageLocation": "./.yarn/unplugged/core-js-npm-3.21.1-4b064616b4/node_modules/core-js/",
+          "packageDependencies": [
+            ["core-js", "npm:3.21.1"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
       ["core-js-pure", [
         ["npm:3.21.1", {
           "packageLocation": "./.yarn/unplugged/core-js-pure-npm-3.21.1-8959cc165d/node_modules/core-js-pure/",
@@ -2203,10 +2223,12 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["exercise_webpack", "workspace:."],
             ["@pmmmwh/react-refresh-webpack-plugin", "virtual:86db00c5f3a706f1820970e628526dec152db48a5baa907699f1f545d9713985f99563ef59c7b43449eac173fe3595397520198b610f948d19a82508148c116a#npm:0.5.4"],
+            ["@types/core-js", "npm:2.5.5"],
             ["@types/lodash-es", "npm:4.17.6"],
             ["@types/node", "npm:17.0.18"],
             ["@types/react", "npm:17.0.39"],
             ["@types/react-dom", "npm:17.0.11"],
+            ["core-js", "npm:3.21.1"],
             ["cross-env", "npm:7.0.3"],
             ["express", "npm:4.17.3"],
             ["html-webpack-plugin", "virtual:86db00c5f3a706f1820970e628526dec152db48a5baa907699f1f545d9713985f99563ef59c7b43449eac173fe3595397520198b610f948d19a82508148c116a#npm:5.5.0"],
